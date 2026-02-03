@@ -3,8 +3,8 @@
 </p> -->
 
 <p align="center">
-  <a href="https://Academic-Codex.github.io/PGF5001-Mecanica-Quantica-I">
-    <img src=".github/readme/hero.svg?v=2026-01-08T01:39:25.642368Z" width="100%" alt="Access the course website" />
+  <a href="https://academic-codex.github.io/PGF5001-Mecanica-Quantica-I?utm_source=PGF5001-Mecanica-Quantica-I&utm_medium=readme">
+    <img src=".github/readme/hero.svg?v=2026-02-03T01:39:05.389369Z" width="100%" alt="Access the course website" />
   </a>
 </p>
 

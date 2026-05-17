@@ -13245,7 +13245,7 @@ div#notebook {
         }
 
         .math-block {
-            margin: 24px 55px;
+            margin: 2px;
             border-radius: 14px;
             background: var(--block-bg, #f7f7f7);
             border-left: 5px solid var(--block-border, #555);
@@ -13326,20 +13326,153 @@ div#notebook {
         .proof-content ol {
             text-indent: 0 !important;
         }
+
+        .math-index {
+            margin: 2px;
+            padding: 22px 26px;
+            border-radius: 16px;
+            background: #f8fafc;
+            border: 1px solid rgba(15, 23, 42, 0.12);
+        }
+
+        .math-index h2 {
+            margin-top: 0;
+            text-indent: 0 !important;
+        }
+
+        .math-index ul {
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+            list-style: none;
+        }
+
+        .math-index li {
+            text-align: left !important;
+            margin: 6px 0;
+        }
+
+        .math-index a {
+            text-decoration: none;
+            color: #1e293b;
+        }
+
+        .math-index a:hover {
+            text-decoration: underline;
+        }
+
+        .math-index-chapter {
+            margin-top: 14px !important;
+            font-weight: 800;
+        }
+
+        .math-index-section {
+            margin-left: 18px !important;
+            font-weight: 650;
+        }
+
+        .math-index-subsection {
+            margin-left: 36px !important;
+            font-weight: 550;
+        }
+
+        .math-index-block {
+            margin-left: 54px !important;
+            font-size: 0.95em;
+        }
+
+        .math-block-links {
+            margin-top: 18px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            font-size: 0.85em;
+            opacity: 0.72;
+            text-align: right;
+        }
+
+        .math-block-links a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .math-block-links a:hover {
+            text-decoration: underline;
+        }
+
+        .math-anchor {
+            scroll-margin-top: 90px;
+        }
+
+        .math-block {
+            scroll-margin-top: 90px;
+        }
+    
+        /* remove espaço externo do markdown renderizado */
+        div.text_cell_render.rendered_html {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* remove padding da célula markdown */
+        div.text_cell {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        /* remove espaço da inner cell */
+        div.inner_cell {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        /* remove margem automática dos blocos HTML renderizados */
+        .rendered_html {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .math-block.result {
+            --block-border: #9333ea;
+            --block-bg: #faf5ff;
+        }
+        .math-block-details {
+            padding: 14px 26px 18px 26px;
+            border-top: 1px solid rgba(0,0,0,0.10);
+            background: rgba(255,255,255,0.55);
+        }
+
+        .math-block-details .math-block-links {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .math-number {
+            color: #94a3b8;
+            font-size: 0.82em;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .math-block.postulate {
+            --block-border: #b45309;
+            --block-bg: #fff7ed;
+        }
         </style>
 </head>
 <body>
 <main>
 <div class="border-box-sizing" id="notebook" tabindex="-1">
 <div class="container" id="notebook-container">
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=d3caeaec"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=f3e80a93"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Hydrogen-Atom-%E2%80%94-Radial-Equation,-Quantization-and-Hidden-SO(4)-Symmetry">Hydrogen Atom — Radial Equation, Quantization and Hidden SO(4) Symmetry<a class="anchor-link" href="#Hydrogen-Atom-%E2%80%94-Radial-Equation,-Quantization-and-Hidden-SO(4)-Symmetry">¶</a></h1><p><em>Resumo da aula • derivação passo a passo com ênfase nas condições assintóticas, Kummer e degenerescências</em></p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=08f58c23"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=16c13656"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="0)-Setup-e-nota%C3%A7%C3%A3o">0) Setup e notação<a class="anchor-link" href="#0)-Setup-e-nota%C3%A7%C3%A3o">¶</a></h2><ul>
@@ -13358,7 +13491,7 @@ $$
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=afdc3d50"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=1f9ba22c"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="1)-Assint%C3%B3tica-para-$r%5Cto-0$-(pequeno-$r$)">1) Assintótica para $r\to 0$ (pequeno $r$)<a class="anchor-link" href="#1)-Assint%C3%B3tica-para-$r%5Cto-0$-(pequeno-$r$)">¶</a></h2><p>Para $r$ muito pequeno, o termo centrífugo $\ell(\ell+1)/r^2$ domina (o termo $$E-V$$ é finito). A Eq. (R) vira
@@ -13377,7 +13510,7 @@ $$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=1a87d7f3"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=dfe8299d"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="2)-Assint%C3%B3tica-para-$r%5Cto%5Cinfty$-(grande-$r$)">2) Assintótica para $r\to\infty$ (grande $r$)<a class="anchor-link" href="#2)-Assint%C3%B3tica-para-$r%5Cto%5Cinfty$-(grande-$r$)">¶</a></h2><p>Para estados ligados ($$E&lt;0$$), a Eq. (R) para $$r\to\infty$$ reduz a
@@ -13393,7 +13526,7 @@ com $$w(\rho)$$ função regular a determinar.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=942b1a8b"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=8210994e"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="3)-Inserindo-o-ansatz-e-obtendo-a-equa%C3%A7%C3%A3o-de-Kummer">3) Inserindo o ansatz e obtendo a equação de Kummer<a class="anchor-link" href="#3)-Inserindo-o-ansatz-e-obtendo-a-equa%C3%A7%C3%A3o-de-Kummer">¶</a></h2><p>Coloque o ansatz em (R) usando $$u=rR=(2\kappa r)^{\ell+1}e^{-\kappa r}w(\rho)$$.<br/>
@@ -13410,7 +13543,7 @@ Suas soluções gerais são as <strong>Confluent Hypergeometric Functions</stron
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=2aadf993"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=d2ec3026"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="4)-Condi%C3%A7%C3%A3o-de-normalizabilidade-$%5CRightarrow$-truncamento-da-s%C3%A9rie">4) Condição de normalizabilidade $\Rightarrow$ truncamento da série<a class="anchor-link" href="#4)-Condi%C3%A7%C3%A3o-de-normalizabilidade-$%5CRightarrow$-truncamento-da-s%C3%A9rie">¶</a></h2><p>Para $$x\to\infty$$, $$M(a,c;x)\sim e^{x}x^{a-c}/\Gamma(a)$$ diverge exponencialmente. A única forma de manter
@@ -13436,7 +13569,7 @@ com $$\alpha=\tfrac{e^2}{\hbar c}\approx\tfrac{1}{137}$$.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=4388ac0d"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=08b34f04"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="5)-Degeneresc%C3%AAncias:-SO(3)-vs.-o-caso-do-Hidrog%C3%AAnio">5) Degenerescências: SO(3) vs. o caso do Hidrogênio<a class="anchor-link" href="#5)-Degeneresc%C3%AAncias:-SO(3)-vs.-o-caso-do-Hidrog%C3%AAnio">¶</a></h2><ul>
@@ -13451,7 +13584,7 @@ que é <strong>maior</strong> do que se esperaria de SO(3). Isto sinaliza uma <s
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=73385c4c"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=507cfdbd"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="6)-Vetor-de-Laplace%E2%80%93Runge%E2%80%93Lenz-(LRL)-e-%C3%B3rbitas-cl%C3%A1ssicas">6) Vetor de Laplace–Runge–Lenz (LRL) e órbitas clássicas<a class="anchor-link" href="#6)-Vetor-de-Laplace%E2%80%93Runge%E2%80%93Lenz-(LRL)-e-%C3%B3rbitas-cl%C3%A1ssicas">¶</a></h2><p>Para o potencial $$V\propto-1/r$$ (lei do inverso do quadrado), as órbitas clássicas são <strong>elipses fechadas</strong>, e existe a constante vetorial de movimento (LRL):
@@ -13468,7 +13601,7 @@ $$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=7599f161"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=12747589"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="7)-%C3%81lgebra-SO(4)-a-partir-de-$%5Cvec-L$-e-do-LRL">7) Álgebra SO(4) a partir de $\vec L$ e do LRL<a class="anchor-link" href="#7)-%C3%81lgebra-SO(4)-a-partir-de-$%5Cvec-L$-e-do-LRL">¶</a></h2><p>No subespaço de energia ligada ($$E&lt;0$$), define-se o vetor <strong>adimensional</strong>
@@ -13505,7 +13638,7 @@ $$
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=7c53dd9f"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=547247e2"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="8)-Forma-final-das-autofun%C3%A7%C3%B5es-radiais">8) Forma final das autofunções radiais<a class="anchor-link" href="#8)-Forma-final-das-autofun%C3%A7%C3%B5es-radiais">¶</a></h2><p>Juntando tudo, as soluções radialmente normalizadas (até constante de normalização) são
